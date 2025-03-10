@@ -1,0 +1,266 @@
+html {
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: rgb(90, 109, 109);
+
+        .main-container {
+            width: 80%;
+            max-width: 1200px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../img/main/background.png);
+
+            header {
+                position: relative;
+                background-image: url(../img/main/top_back.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 15vh;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 1px;
+                gap: 1px;
+                box-sizing: border-box;
+
+                .header-left {
+                    width: 25%;
+
+                    .btn-home {
+                        background-image: url(../img/main/home_button.png);
+                    }
+                }
+
+                .header-center {
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .logo-panel{
+                        display: inline-flex;
+                        width: 70%;
+                        height: 65%;
+                        max-height: 120px;
+                        background-image:
+                            url(../img/main/logo.png),
+                            url(../img/main/logo_panel.png);
+                        background-size: 70% auto, cover;
+                        background-position: center center, center;
+                        background-repeat: no-repeat, no-repeat;
+                    }
+                }
+
+                .header-right {
+                    width: 25%;
+
+                    .btn-settings {
+                        background-image: url(../img/main/settings_button.png);
+                    }
+
+                }
+
+                .header-left,
+                .header-right,
+                .header-center {
+                    height: 100%;
+                    min-height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: none;
+                    box-sizing: border-box;
+                    flex-shrink: 0;
+
+                    .header-btn {
+                        width: 70%;
+                        height: 70%;
+                        max-width: 120px;
+                        max-height: 120px;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border: none;
+                        cursor: pointer;
+                        transition: transform 0.2s ease-in-out;
+                        background-color: transparent;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }
+            }
+
+            main{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-grow: 1;
+
+                .main-buttons{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 80%;
+                    max-width: 1200px;
+                    gap: 20px;
+
+                    .menu-btn{
+                        width: 50%;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border: none;
+                        cursor: pointer;
+                        aspect-ratio: 1;
+                        transition: transform 0.2s ease-in-out;
+                        background-color: transparent;
+
+                        &:hover{
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    .btn-events{
+                        background-image: url(../img/home/events.png);
+                    }
+
+                    .btn-to-do{
+                        background-image: url(../img/home/to_do_list.png);
+                    }
+                }
+            }
+
+            footer{
+                background-image: url(../img/home/down_panel.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 20vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+                
+        .main-container.login-register-container {
+            background-image: url(../img/login-register/zach_back.png);
+
+            .login-register-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                max-width: 400px;
+                margin-top: 10vh;
+
+                .login-logo {
+                    width: 50%;
+                    height: auto;
+                    margin-bottom: 10vh;
+                }
+
+                .login-register-form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 20px;
+                    width: 100%;
+                    max-width: 350px;
+                    border-radius: 10px;
+
+                    input {
+                        width: 95%;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: black;
+                        color: white;
+
+                        &::placeholder {
+                            color: grey;
+                        }
+                    }
+
+                    .show-password {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 3px;
+                        color: white;
+                        font-size: 16px;
+                        margin: 15px;
+
+                        label {
+                            white-space: nowrap;
+                            position: relative;
+                            top: -4px;
+                        }
+                    }
+
+                    .login-btn, .register-btn, .back-btn, #redirect-register-btn{
+                        width: 40%;
+                        min-width: 100px;
+                        height: 5vh;
+                        min-height: 30px;
+                        border: none;
+                        border-radius: 8px;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: white;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .login-btn {
+                        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+                        margin-bottom: 10px;
+
+                        &:hover {
+                            background: linear-gradient(135deg, #66BB6A, #388E3C);
+                            transform: translateY(-2px);
+                        }
+                    }
+
+                    .register-btn, #redirect-register-btn {
+                        background: linear-gradient(135deg, #2196F3, #1565C0);
+
+
+                        &:hover {
+                            background: linear-gradient(135deg, #42A5F5, #1E88E5);
+                            transform: translateY(-2px);
+                        }
+                    }
+
+                    .back-btn {
+                        background: linear-gradient(135deg, #FF9800, #F57C00);
+                        margin-top: 10px;
+
+                        &:hover {
+                            background: linear-gradient(135deg, #FFA726, #F57C00);
+                            transform: translateY(-2px);
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,230 @@
+html body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(90, 109, 109);
+}
+html body .main-container {
+  width: 80%;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../img/main/background.png);
+}
+html body .main-container header {
+  position: relative;
+  background-image: url(../img/main/top_back.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 15vh;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1px;
+  gap: 1px;
+  box-sizing: border-box;
+}
+html body .main-container header .header-left {
+  width: 25%;
+}
+html body .main-container header .header-left .btn-home {
+  background-image: url(../img/main/home_button.png);
+}
+html body .main-container header .header-center {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body .main-container header .header-center .logo-panel {
+  display: inline-flex;
+  width: 70%;
+  height: 65%;
+  max-height: 120px;
+  background-image: url(../img/main/logo.png), url(../img/main/logo_panel.png);
+  background-size: 70% auto, cover;
+  background-position: center center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+html body .main-container header .header-right {
+  width: 25%;
+}
+html body .main-container header .header-right .btn-settings {
+  background-image: url(../img/main/settings_button.png);
+}
+html body .main-container header .header-left,
+html body .main-container header .header-right,
+html body .main-container header .header-center {
+  height: 100%;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+html body .main-container header .header-left .header-btn,
+html body .main-container header .header-right .header-btn,
+html body .main-container header .header-center .header-btn {
+  width: 70%;
+  height: 70%;
+  max-width: 120px;
+  max-height: 120px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  background-color: transparent;
+}
+html body .main-container header .header-left .header-btn:hover,
+html body .main-container header .header-right .header-btn:hover,
+html body .main-container header .header-center .header-btn:hover {
+  transform: scale(1.1);
+}
+html body .main-container main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+html body .main-container main .main-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  gap: 20px;
+}
+html body .main-container main .main-buttons .menu-btn {
+  width: 50%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  aspect-ratio: 1;
+  transition: transform 0.2s ease-in-out;
+  background-color: transparent;
+}
+html body .main-container main .main-buttons .menu-btn:hover {
+  transform: scale(1.1);
+}
+html body .main-container main .main-buttons .btn-events {
+  background-image: url(../img/home/events.png);
+}
+html body .main-container main .main-buttons .btn-to-do {
+  background-image: url(../img/home/to_do_list.png);
+}
+html body .main-container footer {
+  background-image: url(../img/home/down_panel.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body .main-container.login-register-container {
+  background-image: url(../img/login-register/zach_back.png);
+}
+html body .main-container.login-register-container .login-register-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10vh;
+}
+html body .main-container.login-register-container .login-register-box .login-logo {
+  width: 50%;
+  height: auto;
+  margin-bottom: 10vh;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form input::-moz-placeholder {
+  color: grey;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form input::placeholder {
+  color: grey;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .show-password {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  color: white;
+  font-size: 16px;
+  margin: 15px;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .show-password label {
+  white-space: nowrap;
+  position: relative;
+  top: -4px;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .login-btn, html body .main-container.login-register-container .login-register-box .login-register-form .register-btn, html body .main-container.login-register-container .login-register-box .login-register-form .back-btn, html body .main-container.login-register-container .login-register-box .login-register-form #redirect-register-btn {
+  width: 40%;
+  min-width: 100px;
+  height: 5vh;
+  min-height: 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .login-btn {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  margin-bottom: 10px;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .login-btn:hover {
+  background: linear-gradient(135deg, #66BB6A, #388E3C);
+  transform: translateY(-2px);
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .register-btn, html body .main-container.login-register-container .login-register-box .login-register-form #redirect-register-btn {
+  background: linear-gradient(135deg, #2196F3, #1565C0);
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .register-btn:hover, html body .main-container.login-register-container .login-register-box .login-register-form #redirect-register-btn:hover {
+  background: linear-gradient(135deg, #42A5F5, #1E88E5);
+  transform: translateY(-2px);
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .back-btn {
+  background: linear-gradient(135deg, #FF9800, #F57C00);
+  margin-top: 10px;
+}
+html body .main-container.login-register-container .login-register-box .login-register-form .back-btn:hover {
+  background: linear-gradient(135deg, #FFA726, #F57C00);
+  transform: translateY(-2px);
+}/*# sourceMappingURL=style.css.map */

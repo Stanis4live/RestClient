@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Organizer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/auth.js" defer></script>
+
+</head>
+<body>
+    <div class="main-container login-register-container">
+        <main>
+            <div class="login-register-box">
+                <img src="img/login-register/logo.png" alt="logo" class="login-logo">
+
+                <form class="login-register-form">
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password" id="register-password">
+                    <input type="password" placeholder="confirm password" id="confirm-password">
+
+                    <p class="error-message"></p>
+
+                    <div class="show-password">
+                        <input type="checkbox" class="show-pass-checkbox">
+                        <label for="show-pass">show password</label>
+                    </div>
+
+                    <button type="submit" class="register-btn">register</button>
+                    <button type="button" class="back-btn">back</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector(".login-register-form");
+            const errorMessage = document.querySelector(".error-message");
+
+            form.addEventListener("submit", function (event){
+                event.preventDefault();
+                let email = document.querySelector("input[type='email']").value.trim();
+                let password = document.getElementById("register-password").value.trim();
+                let confirmPassword = document.getElementById("confirm-password").value.trim();
+                registerUser(email, password, confirmPassword, errorMessage)
+            });
+
+            document.querySelector(".back-btn").addEventListener("click", function () {
+                    window.location.href = "/";
+                });
+        });
+
+        </script>
+</body>
+</html>
