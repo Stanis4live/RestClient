@@ -9,11 +9,11 @@ public class Controllers {
 
     @GetMapping("/register")
     public String registerPage(){
-        return "redirect:/register.html";
+        return "register";
     }
 
     @GetMapping("/login")
     public String loginPage(){
-        return "redirect:/login.html";
+        return "login.html";
     }
 }

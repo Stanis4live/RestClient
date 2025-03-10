@@ -196,6 +196,13 @@ html {
                         }
                     }
 
+
+                    .error-message{
+                        color: red;
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+
                     .show-password {
                         display: flex;
                         align-items: center;
@@ -261,6 +268,5 @@ html {
                 }
             }
         }
-
     }
 }

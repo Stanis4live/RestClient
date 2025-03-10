@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Organizer</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/auth.js" defer></script>
+    <link rel="stylesheet"  th:href="@{/css/style.css}">
+    <script th:src="@{/js/auth.js}" defer></script>
 
 </head>
 <body>
     <div class="main-container login-register-container">
         <main>
             <div class="login-register-box">
-                <img src="img/login-register/logo.png" alt="logo" class="login-logo">
+                <img th:src="@{/img/login-register/logo.png}" alt="logo" class="login-logo">
 
                 <form class="login-register-form">
                     <input type="email" placeholder="email">
-                    <input type="password" placeholder="password" id="register-password">
-                    <input type="password" placeholder="confirm password" id="confirm-password">
+                    <input type="password" placeholder="password" id="password">
 
                     <p class="error-message"></p>
 
@@ -26,14 +25,14 @@
                         <label for="show-pass">show password</label>
                     </div>
 
-                    <button type="submit" class="register-btn">register</button>
-                    <button type="button" class="back-btn">back</button>
+                    <button type="submit" class="login-btn">login</button>
+                    <button type="button" id="redirect-register-btn">register</button>
                 </form>
             </div>
         </main>
     </div>
 
-    <script>
+    <script>        
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.querySelector(".login-register-form");
             const errorMessage = document.querySelector(".error-message");
@@ -41,16 +40,14 @@
             form.addEventListener("submit", function (event){
                 event.preventDefault();
                 let email = document.querySelector("input[type='email']").value.trim();
-                let password = document.getElementById("register-password").value.trim();
-                let confirmPassword = document.getElementById("confirm-password").value.trim();
-                registerUser(email, password, confirmPassword, errorMessage)
+                let password = document.getElementById("password").value.trim();
+                loginUser(email, password, errorMessage)
             });
 
-            document.querySelector(".back-btn").addEventListener("click", function () {
-                    window.location.href = "/";
-                });
+            document.querySelector("#redirect-register-btn").addEventListener("click", function () {
+                window.location.href = "/register";
+            });
         });
-
         </script>
 </body>
 </html>

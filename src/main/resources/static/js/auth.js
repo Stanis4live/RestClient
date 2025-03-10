@@ -1,4 +1,5 @@
 const AUTH_API_URL = "http://localhost:8080";
+const BASE_URL = "http://localhost:8899";
 
 function saveToken(token){
     localStorage.setItem("jwtToken", token);
@@ -15,7 +16,6 @@ function removeToken(){
 async function registerUser(email, password, confirmPassword, errorMessageElement) {
     if (password != confirmPassword) {
         errorMessage.textContent = "Password do not match"
-        errorMessage.style.color = "red"
         return
     }
 
@@ -32,7 +32,7 @@ async function registerUser(email, password, confirmPassword, errorMessageElemen
             throw new Error(await response.text());
         }
 
-        window.location.href = "login.html";
+        window.location.href = `${BASE_URL}/login`
         console.log(response)
 
     } catch (error) {
@@ -58,7 +58,7 @@ async function loginUser(email, password, errorMessageElement){
         }
         const data = await response.json();
         saveToken(data.token);
-        window.location.href = "home.html"
+        window.location.href = `${BASE_URL}/home`
     } catch (error) {
         errorMessageElement.textContent = "Error " + error.message;
     }

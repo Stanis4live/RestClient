@@ -177,6 +177,11 @@ html body .main-container.login-register-container .login-register-box .login-re
 html body .main-container.login-register-container .login-register-box .login-register-form input::placeholder {
   color: grey;
 }
+html body .main-container.login-register-container .login-register-box .login-register-form .error-message {
+  color: red;
+  font-weight: bold;
+  font-size: 16px;
+}
 html body .main-container.login-register-container .login-register-box .login-register-form .show-password {
   display: flex;
   align-items: center;
