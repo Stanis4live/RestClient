@@ -29,6 +29,6 @@ public class Controllers {
 
     @GetMapping("/one-event")
     public String oneEventPage(){
-        return "one_event";
+        return "one-event";
     }
 }

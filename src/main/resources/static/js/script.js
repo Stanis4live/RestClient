@@ -139,9 +139,10 @@ function displayEvents(events) {
     })
 }
 
-async function addEvent(event) {
+async function saveEvent(event) {
     event.preventDefault()
     const token = getToken();
+    const eventId = localStorage.getItem("editEventId");
 
     const title = document.getElementById("event-title").value;
     const description = document.getElementById("event-description").value;
@@ -152,10 +153,12 @@ async function addEvent(event) {
         description: description,
         dateTime: dateTime
     };
+    const method = eventId ? "PUT" : "POST";
+    const url = eventId ? `${AUTH_API_URL}/events/${eventId}` : `${AUTH_API_URL}/events/`
 
     try{
-        const response = await fetch(`${AUTH_API_URL}/events`, {
-            method: "POST",
+        const response = await fetch(url, {
+            method: method,
             headers: {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
@@ -163,14 +166,86 @@ async function addEvent(event) {
             body: JSON.stringify(requestData)
         });
 
-        if (response.status === 401 || response.status === 403){
+        if (response.status === 401){
             window.location.href = `login`
             return
+        } else if (response.status === 403){
+            console.error("Error 403")
+            return
         }
-
+          
+        localStorage.removeItem("editEventId");
         getUserEvents();
 
     } catch (error){
         console.log(error)
+    }
+}
+
+function editEvent(eventId) {
+    localStorage.setItem("editEventId", eventId);
+    window.location.href = `${BASE_URL}/one-event`;
+}
+
+async function loadEventData() {
+    const eventId = localStorage.getItem("editEventId");
+    if (!eventId){
+        return;
+    }
+
+    const token = getToken();
+
+    try{
+        const response = await fetch(`${AUTH_API_URL}/events/${eventId}`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+    });
+
+    if (response.status === 401){
+        window.location.href = `login`
+        return
+    } else if (response.status === 403){
+        console.error("Error 403")
+        return
+    }
+
+    const event = await response.json();
+    document.getElementById("event-title").value = event.title;
+    document.getElementById("event-description").value = event.description;
+    document.getElementById("event-datetime").value = event.dateTime;
+
+
+    } catch (error){
+        console.error("Error loading event:", error)
+    }
+}
+
+async function deleteEvent(eventId) {
+    const token = getToken();
+
+    try{
+        const response = await fetch(`${AUTH_API_URL}/events/${eventId}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+    });
+
+    if (response.status === 401){
+        window.location.href = `login`
+        return
+    } else if (response.status === 403){
+        console.error("Error 403")
+        return
+    }
+
+    getUserEvents();
+
+    } catch (error){
+        console.error("Error deleting event:", error)
     }
 }
