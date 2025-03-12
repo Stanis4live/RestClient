@@ -39,6 +39,14 @@
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.querySelector(".login-register-form");
             const errorMessage = document.querySelector(".error-message");
+            const passwordInput = document.getElementById("register-password");
+            const passwordInputConfirm = document.getElementById("confirm-password");
+            const passwordCheckbox = document.querySelector(".show-pass-checkbox");
+
+            passwordCheckbox.addEventListener("change", function() {
+                passwordInput.type = this.checked ? "text": "password";
+                passwordInputConfirm.type = this.checked ? "text": "password";
+            });
 
             form.addEventListener("submit", function (event){
                 event.preventDefault();

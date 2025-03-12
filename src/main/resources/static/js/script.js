@@ -1,6 +1,27 @@
 const AUTH_API_URL = "http://localhost:8080";
 const BASE_URL = "http://localhost:8899";
 
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.querySelector(".logout-btn");
+    const homeButton = document.querySelector(".btn-home");
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function() {
+            removeToken();
+            window.location.href = `login`;
+        })
+    };
+
+    if (homeButton) {
+        homeButton.addEventListener("click", function() {
+            localStorage.removeItem("editEventId");
+            window.location.href = `home`;
+
+        })
+    };
+})
+
+
 function saveToken(token){
     localStorage.setItem("jwtToken", token);
 }

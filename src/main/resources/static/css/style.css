@@ -50,15 +50,15 @@ html body .main-container header .header-center .logo-panel {
   height: 65%;
   max-height: 120px;
   background-image: url(../img/main/logo.png), url(../img/main/logo_panel.png);
-  background-size: 70% auto, cover;
+  background-size: contain, cover;
   background-position: center center, center;
   background-repeat: no-repeat, no-repeat;
 }
 html body .main-container header .header-right {
   width: 25%;
 }
-html body .main-container header .header-right .btn-settings {
-  background-image: url(../img/main/settings_button.png);
+html body .main-container header .header-right .logout-btn {
+  background-image: url(../img/main/logout.png);
 }
 html body .main-container header .header-left,
 html body .main-container header .header-right,
@@ -173,6 +173,7 @@ html body .main-container main .list-container #events-list .event-card h3 {
 }
 html body .main-container main .list-container #events-list .event-card p {
   margin-left: 5%;
+  margin-right: 3%;
   color: white;
   white-space: normal;
   word-wrap: break-word;

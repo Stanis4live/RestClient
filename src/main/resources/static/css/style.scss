@@ -55,7 +55,7 @@ html {
                         background-image:
                             url(../img/main/logo.png),
                             url(../img/main/logo_panel.png);
-                        background-size: 70% auto, cover;
+                        background-size: contain, cover;
                         background-position: center center, center;
                         background-repeat: no-repeat, no-repeat;
                     }
@@ -64,8 +64,8 @@ html {
                 .header-right {
                     width: 25%;
 
-                    .btn-settings {
-                        background-image: url(../img/main/settings_button.png);
+                    .logout-btn {
+                        background-image: url(../img/main/logout.png);
                     }
 
                 }
@@ -197,6 +197,7 @@ html {
     
                             p{
                                 margin-left: 5%;
+                                margin-right: 3%;
                                 color: white;
                                 white-space: normal;
                                 word-wrap: break-word;
