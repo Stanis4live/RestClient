@@ -94,11 +94,159 @@ html body .main-container header .header-center .header-btn:hover {
 }
 html body .main-container main {
   display: flex;
+  flex-grow: 1;
+}
+html body .main-container main .list-container, html body .main-container main .event-container {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+html body .main-container main .list-container .top-panel, html body .main-container main .event-container .top-panel {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+html body .main-container main .list-container .top-panel .back-home-btn, html body .main-container main .list-container .top-panel .back-events-btn, html body .main-container main .event-container .top-panel .back-home-btn, html body .main-container main .event-container .top-panel .back-events-btn {
+  width: 25%;
+  height: 70%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  background-color: transparent;
+  background-image: url(../img/main/back.png);
+}
+html body .main-container main .list-container .top-panel .back-home-btn:hover, html body .main-container main .list-container .top-panel .back-events-btn:hover, html body .main-container main .event-container .top-panel .back-home-btn:hover, html body .main-container main .event-container .top-panel .back-events-btn:hover {
+  transform: scale(1.1);
+}
+html body .main-container main .list-container .top-panel #side-panel, html body .main-container main .event-container .top-panel #side-panel {
+  position: absolute;
+  width: 75%;
+  height: 70%;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url(../img/main/right_panel.png);
+  border: none;
+}
+html body .main-container main .list-container .top-panel #side-panel .add-btn, html body .main-container main .event-container .top-panel #side-panel .add-btn {
+  width: 70%;
+  height: 70%;
+  border: none;
+  cursor: pointer;
+  margin-left: 15%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: transparent;
+  background-image: url(../img/main/add.png);
+  transition: transform 0.2s ease-in-out;
+}
+html body .main-container main .list-container .top-panel #side-panel .add-btn:hover, html body .main-container main .event-container .top-panel #side-panel .add-btn:hover {
+  transform: scale(1.1);
+}
+html body .main-container main .list-container #events-list .event-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../img/event/event_back_panel.png);
+  padding: 15px;
+  margin: 10px 0;
+}
+html body .main-container main .list-container #events-list .event-card h3 {
+  margin-left: 10%;
+  font-size: 18px;
+  color: orangered;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html body .main-container main .list-container #events-list .event-card p {
+  margin-left: 5%;
+  color: white;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+html body .main-container main .list-container #events-list .event-card .edit-btn, html body .main-container main .list-container #events-list .event-card .delete-btn {
+  margin-left: 5%;
+  width: 100px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  transition: transform 0.2s ease-in-out;
+}
+html body .main-container main .list-container #events-list .event-card .edit-btn:hover, html body .main-container main .list-container #events-list .event-card .delete-btn:hover {
+  transform: scale(1.1);
+}
+html body .main-container main .list-container #events-list .event-card .edit-btn {
+  background-image: url(../img/event/edit.png);
+}
+html body .main-container main .list-container #events-list .event-card .delete-btn {
+  background-image: url(../img/event/delete.png);
+}
+html body .main-container main .event-container #event-form {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 90%;
+}
+html body .main-container main .event-container #event-form input, html body .main-container main .event-container #event-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html body .main-container main .event-container #event-form input::-moz-placeholder, html body .main-container main .event-container #event-form textarea::-moz-placeholder {
+  color: grey;
+}
+html body .main-container main .event-container #event-form input::placeholder, html body .main-container main .event-container #event-form textarea::placeholder {
+  color: grey;
+}
+html body .main-container main .event-container #event-form textarea {
+  min-height: 100px;
+}
+html body .main-container main .event-container #event-form .save-btn {
+  width: 200px;
+  height: 70px;
+  border: none;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url(../img/event/save.png);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+html body .main-container main .event-container #event-form .save-btn:hover {
+  transform: scale(1.1);
+}
+html body .main-container main .home-container, html body .main-container main .register-container, html body .main-container main .login-container {
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
 }
-html body .main-container main .main-buttons {
+html body .main-container main .home-container .main-buttons, html body .main-container main .register-container .main-buttons, html body .main-container main .login-container .main-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,7 +254,7 @@ html body .main-container main .main-buttons {
   max-width: 1200px;
   gap: 20px;
 }
-html body .main-container main .main-buttons .menu-btn {
+html body .main-container main .home-container .main-buttons .menu-btn, html body .main-container main .register-container .main-buttons .menu-btn, html body .main-container main .login-container .main-buttons .menu-btn {
   width: 50%;
   background-size: contain;
   background-position: center;
@@ -117,13 +265,13 @@ html body .main-container main .main-buttons .menu-btn {
   transition: transform 0.2s ease-in-out;
   background-color: transparent;
 }
-html body .main-container main .main-buttons .menu-btn:hover {
+html body .main-container main .home-container .main-buttons .menu-btn:hover, html body .main-container main .register-container .main-buttons .menu-btn:hover, html body .main-container main .login-container .main-buttons .menu-btn:hover {
   transform: scale(1.1);
 }
-html body .main-container main .main-buttons .btn-events {
+html body .main-container main .home-container .main-buttons .btn-events, html body .main-container main .register-container .main-buttons .btn-events, html body .main-container main .login-container .main-buttons .btn-events {
   background-image: url(../img/home/events.png);
 }
-html body .main-container main .main-buttons .btn-to-do {
+html body .main-container main .home-container .main-buttons .btn-to-do, html body .main-container main .register-container .main-buttons .btn-to-do, html body .main-container main .login-container .main-buttons .btn-to-do {
   background-image: url(../img/home/to_do_list.png);
 }
 html body .main-container footer {
@@ -131,7 +279,7 @@ html body .main-container footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 20vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;

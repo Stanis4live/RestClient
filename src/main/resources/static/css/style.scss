@@ -105,9 +105,183 @@ html {
 
             main{
                 display: flex;
-                justify-content: center;
-                align-items: center;
                 flex-grow: 1;
+
+                .list-container, .event-container{
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+
+                    .top-panel{
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+                        width: 100%;
+                        height: 15vh;
+                        margin-left: 10px;
+                        box-sizing: border-box;
+
+                        .back-home-btn, .back-events-btn{
+                            width: 25%;
+                            height: 70%;
+                            background-size: contain;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            border: none;
+                            cursor: pointer;
+                            transition: transform 0.2s ease-in-out;
+                            background-color: transparent;
+                            background-image: url(../img/main/back.png);
+
+
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        #side-panel{
+                            position: absolute;
+                            width: 75%;
+                            height: 70%;
+                            left: 40%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-size: contain;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-color: transparent;
+                            background-image: url(../img/main/right_panel.png);
+                            border: none;
+
+                            .add-btn{
+                                width: 70%;
+                                height: 70%;
+                                border: none;
+                                cursor: pointer;
+                                margin-left: 15%;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                background-position: center;
+                                background-color: transparent;
+                                background-image: url(../img/main/add.png);
+                                transition: transform 0.2s ease-in-out;
+
+                                &:hover{
+                                    transform: scale(1.1);
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+
+                .list-container{
+                    #events-list{
+                        .event-card{
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-image: url(../img/event/event_back_panel.png);
+                            padding: 15px;
+                            margin: 10px 0;
+                            
+                            h3{
+                                margin-left: 10%;
+                                font-size: 18px;
+                                color: orangered;
+                                white-space: normal;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+    
+                            p{
+                                margin-left: 5%;
+                                color: white;
+                                white-space: normal;
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                            }
+    
+                            .edit-btn, .delete-btn{
+                                margin-left: 5%;
+                                width: 100px;
+                                height: 50px;
+                                border: none;
+                                cursor: pointer;
+                                background-size: contain;
+                                background-position: center;
+                                background-repeat: no-repeat;    
+                                background-color: transparent;     
+                                transition: transform 0.2s ease-in-out;
+
+                                &:hover{
+                                    transform: scale(1.1);
+                                }                 
+                            }
+    
+                            .edit-btn{
+                                background-image: url(../img/event/edit.png);
+                            }
+    
+                            .delete-btn{
+                                background-image: url(../img/event/delete.png);
+                            }
+                        }
+                    }
+                }
+
+                .event-container{
+                    #event-form{
+                        margin-left: 5%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+                        width: 90%;
+
+                        input, textarea{
+                            width: 100%;
+                            padding: 10px;
+                            font-size: 16px;
+                            border-radius: 5px;
+                            border: none;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+
+                            &::placeholder{
+                                color: grey;
+                            }
+                        }
+
+                        textarea{
+                            min-height: 100px;
+                        }
+
+                        .save-btn{
+                            width: 200px;
+                            height: 70px;
+                            border: none;
+                            background-size: contain;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-color: transparent;
+                            background-image: url(../img/event/save.png);
+                            cursor: pointer;
+                            transition: transform 0.2s ease-in-out;
+
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+
+                .home-container, .register-container, .login-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-grow: 1;
 
                 .main-buttons{
                     display: flex;
@@ -141,14 +315,14 @@ html {
                         background-image: url(../img/home/to_do_list.png);
                     }
                 }
+                }
             }
-
             footer{
                 background-image: url(../img/home/down_panel.png);
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
-                height: 20vh;
+                height: 10vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;

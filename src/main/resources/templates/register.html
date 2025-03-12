@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Organizer</title>
     <link rel="stylesheet"  th:href="@{/css/style.css}">
-    <script th:src="@{/js/auth.js}" defer></script>
+    <script th:src="@{/js/script.js}" defer></script>
 
 </head>
 <body>
     <div class="main-container login-register-container">
         <main>
-            <div class="login-register-box">
-                <img th:src="@{/img/login-register/logo.png}" alt="logo" class="login-logo">
-
-                <form class="login-register-form">
-                    <input type="email" placeholder="email">
-                    <input type="password" placeholder="password" id="register-password">
-                    <input type="password" placeholder="confirm password" id="confirm-password">
-
-                    <p class="error-message"></p>
-
-                    <div class="show-password">
-                        <input type="checkbox" class="show-pass-checkbox">
-                        <label for="show-pass">show password</label>
-                    </div>
-
-                    <button type="submit" class="register-btn">register</button>
-                    <button type="button" class="back-btn">back</button>
-                </form>
-            </div>
+            <div class="register-container">
+                <div class="login-register-box">
+                    <img th:src="@{/img/login-register/logo.png}" alt="logo" class="login-logo">
+    
+                    <form class="login-register-form">
+                        <input type="email" placeholder="email">
+                        <input type="password" placeholder="password" id="register-password">
+                        <input type="password" placeholder="confirm password" id="confirm-password">
+    
+                        <p class="error-message"></p>
+    
+                        <div class="show-password">
+                            <input type="checkbox" class="show-pass-checkbox">
+                            <label for="show-pass">show password</label>
+                        </div>
+    
+                        <button type="submit" class="register-btn">register</button>
+                        <button type="button" class="back-btn">back</button>
+                    </form>
+                </div>
+            </div>            
         </main>
     </div>
 
