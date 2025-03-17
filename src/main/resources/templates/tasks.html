@@ -22,12 +22,16 @@
         </header>
 
         <main>
-            <div class="home-container">
-                <div class="main-buttons">
-                    <button class="menu-btn btn-events"></button>
-                    <button class="menu-btn btn-tasks"></button>
+            <div class="list-container">
+                <div class="top-panel">
+                    <button class="back-home-btn"></button>
+                    <div id="side-panel">
+                        <button class="add-btn"></button>
+                    </div>
                 </div>
-            </div>
+                <div id="tasks-list"></div>
+            </div>        
+
         </main>
 
         <footer>
@@ -36,8 +40,19 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
-            document.querySelector(".btn-events").addEventListener("click", getUserEvents);
-            document.querySelector(".btn-tasks").addEventListener("click", getUserTasks);
+            const tasksData = localStorage.getItem("userTasks");
+            if (tasksData) {
+                const tasks = JSON.parse(tasksData);
+                displayTasks(tasks);
+            }
+
+            document.querySelector(".add-btn").addEventListener("click", function() {
+                window.location.href = "one-task";
+            });
+
+            document.querySelector(".back-home-btn").addEventListener("click", function() {
+                window.location.href = "home";
+            });
         });
     </script>
 </body>

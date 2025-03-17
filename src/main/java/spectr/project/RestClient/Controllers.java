@@ -31,4 +31,15 @@ public class Controllers {
     public String oneEventPage(){
         return "one-event";
     }
+
+    @GetMapping("/tasks")
+    public String tasksPage(){
+        return "tasks";
+    }
+
+    @GetMapping("/one-task")
+    public String oneTaskPage(){
+        return "one-task";
+    }
+
 }

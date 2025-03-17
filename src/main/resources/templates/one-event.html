@@ -22,12 +22,18 @@
         </header>
 
         <main>
-            <div class="home-container">
-                <div class="main-buttons">
-                    <button class="menu-btn btn-events"></button>
-                    <button class="menu-btn btn-tasks"></button>
+            <div class="event-container">
+                <div class="top-panel">
+                    <button class="back-events-btn"></button>
                 </div>
+                <form id="event-form">
+                    <input type="text" id="event-title" placeholder="title" required>
+                    <textarea id="event-description" placeholder="description" required></textarea>
+                    <input type="datetime-local" id="event-datetime" required>
+                    <button type="submit" class="save-btn"></button>
+                </form>
             </div>
+
         </main>
 
         <footer>
@@ -36,9 +42,15 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
-            document.querySelector(".btn-events").addEventListener("click", getUserEvents);
-            document.querySelector(".btn-tasks").addEventListener("click", getUserTasks);
+            loadEventData();
+            document.querySelector(".back-events-btn").addEventListener("click", function() {
+                localStorage.removeItem("editEventId");
+                getUserEvents()
+            });
+            document.getElementById("event-form").addEventListener("submit", saveEvent);
         });
     </script>
+
+
 </body>
 </html>

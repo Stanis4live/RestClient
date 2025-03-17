@@ -22,12 +22,16 @@
         </header>
 
         <main>
-            <div class="home-container">
-                <div class="main-buttons">
-                    <button class="menu-btn btn-events"></button>
-                    <button class="menu-btn btn-tasks"></button>
+            <div class="task-container">
+                <div class="top-panel">
+                    <button class="back-tasks-btn"></button>
                 </div>
+                <form id="task-form">
+                    <input type="text" id="task-title" placeholder="title" required>
+                    <button type="submit" class="save-btn"></button>
+                </form>
             </div>
+
         </main>
 
         <footer>
@@ -36,9 +40,15 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
-            document.querySelector(".btn-events").addEventListener("click", getUserEvents);
-            document.querySelector(".btn-tasks").addEventListener("click", getUserTasks);
+            loadEventData();
+            document.querySelector(".back-tasks-btn").addEventListener("click", function() {
+                localStorage.removeItem("editTaskId");
+                getUserTasks()
+            });
+            document.getElementById("task-form").addEventListener("submit", saveTask);
         });
     </script>
+
+
 </body>
 </html>
