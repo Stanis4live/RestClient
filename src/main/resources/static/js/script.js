@@ -1,5 +1,5 @@
-const AUTH_API_URL = "http://202.182.126.241:8080";
-const BASE_URL = "http://202.182.126.241:8899";
+const AUTH_API_URL = "https://stanis4live.su/api";
+const BASE_URL = "https://stanis4live.su";
 
 document.addEventListener("DOMContentLoaded", function() {
     const logoutButton = document.querySelector(".logout-btn");
