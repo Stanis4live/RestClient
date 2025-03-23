@@ -44,6 +44,7 @@ async function registerUser(email, password, confirmPassword, errorMessageElemen
     const requestData = {email, password}
 
     try {
+        console.log(AUTH_API_URL)
         const response = await fetch(`${AUTH_API_URL}/register`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -66,6 +67,7 @@ async function loginUser(email, password, errorMessageElement){
     const requestData = {email, password}
 
     try{
+        console.log(AUTH_API_URL)
         const response = await fetch(`${AUTH_API_URL}/login`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
