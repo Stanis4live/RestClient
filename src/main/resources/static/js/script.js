@@ -1,4 +1,4 @@
-const AUTH_API_URL = "https://stanis4live.su/api";
+const AUTH_API_URL = "https://stanis4live.su";
 const BASE_URL = "https://stanis4live.su";
 
 document.addEventListener("DOMContentLoaded", function() {
