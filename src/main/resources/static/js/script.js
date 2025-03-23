@@ -1,4 +1,4 @@
-const AUTH_API_URL = "http://localhost:8080";
+const AUTH_API_URL = "http://202.182.126.241:8080";
 const BASE_URL = "http://localhost:8899";
 
 document.addEventListener("DOMContentLoaded", function() {
