@@ -209,7 +209,9 @@ html {
                                 overflow-wrap: break-word;
                             }
     
-                            .edit-btn, .delete-btn{
+                            .edit-btn,
+                            .delete-btn,
+                            .done-btn{
                                 margin-left: 5%;
                                 width: 100px;
                                 height: 50px;
@@ -232,6 +234,10 @@ html {
     
                             .delete-btn{
                                 background-image: url(../img/event/delete.png);
+                            }
+
+                            .done-btn{
+                                background-image: url(../img/task/done.png);
                             }
                         }
 
@@ -337,8 +343,20 @@ html {
                 background-repeat: no-repeat;
                 height: 10vh;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-end;
                 align-items: center;
+                padding-right: 20px;
+
+                .rights-icon{
+                    height: 80%;
+                    width: 20%;
+                    background-image: url(../img/main/rights.png);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: transparent;
+                    display: block;
+                }
             }
         }
                 

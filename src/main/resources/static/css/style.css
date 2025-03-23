@@ -205,7 +205,11 @@ html body .main-container main .list-container #events-list .event-card p, html 
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-html body .main-container main .list-container #events-list .event-card .edit-btn, html body .main-container main .list-container #events-list .event-card .delete-btn, html body .main-container main .list-container #tasks-list .event-card .edit-btn, html body .main-container main .list-container #tasks-list .event-card .delete-btn {
+html body .main-container main .list-container #events-list .event-card .edit-btn,
+html body .main-container main .list-container #events-list .event-card .delete-btn,
+html body .main-container main .list-container #events-list .event-card .done-btn, html body .main-container main .list-container #tasks-list .event-card .edit-btn,
+html body .main-container main .list-container #tasks-list .event-card .delete-btn,
+html body .main-container main .list-container #tasks-list .event-card .done-btn {
   margin-left: 5%;
   width: 100px;
   height: 50px;
@@ -217,7 +221,11 @@ html body .main-container main .list-container #events-list .event-card .edit-bt
   background-color: transparent;
   transition: transform 0.2s ease-in-out;
 }
-html body .main-container main .list-container #events-list .event-card .edit-btn:hover, html body .main-container main .list-container #events-list .event-card .delete-btn:hover, html body .main-container main .list-container #tasks-list .event-card .edit-btn:hover, html body .main-container main .list-container #tasks-list .event-card .delete-btn:hover {
+html body .main-container main .list-container #events-list .event-card .edit-btn:hover,
+html body .main-container main .list-container #events-list .event-card .delete-btn:hover,
+html body .main-container main .list-container #events-list .event-card .done-btn:hover, html body .main-container main .list-container #tasks-list .event-card .edit-btn:hover,
+html body .main-container main .list-container #tasks-list .event-card .delete-btn:hover,
+html body .main-container main .list-container #tasks-list .event-card .done-btn:hover {
   transform: scale(1.1);
 }
 html body .main-container main .list-container #events-list .event-card .edit-btn, html body .main-container main .list-container #tasks-list .event-card .edit-btn {
@@ -225,6 +233,9 @@ html body .main-container main .list-container #events-list .event-card .edit-bt
 }
 html body .main-container main .list-container #events-list .event-card .delete-btn, html body .main-container main .list-container #tasks-list .event-card .delete-btn {
   background-image: url(../img/event/delete.png);
+}
+html body .main-container main .list-container #events-list .event-card .done-btn, html body .main-container main .list-container #tasks-list .event-card .done-btn {
+  background-image: url(../img/task/done.png);
 }
 html body .main-container main .list-container #events-list p, html body .main-container main .list-container #tasks-list p {
   color: white;
@@ -329,8 +340,19 @@ html body .main-container footer {
   background-repeat: no-repeat;
   height: 10vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 20px;
+}
+html body .main-container footer .rights-icon {
+  height: 80%;
+  width: 20%;
+  background-image: url(../img/main/rights.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  display: block;
 }
 html body .main-container.login-register-container {
   background-image: url(../img/login-register/zach_back.png);

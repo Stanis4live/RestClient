@@ -313,20 +313,31 @@ function displayTasks(tasks) {
         return;
     }
 
+    tasks.sort((a,b) => a.done - b.done);
+
     tasks.forEach(task => {
         const taskContainer = document.createElement("div");
         taskContainer.classList.add("event-card");
         const title = document.createElement("h3");
         title.textContent = task.title;
+        if (task.done){
+            title.style.textDecoration = "line-through";
+            title.style.textDecorationColor = "white";
+        }
         const editButton = document.createElement("button");
         editButton.classList.add("edit-btn");
         editButton.addEventListener("click", () => editTask(task.id));
+        const doneButton = document.createElement("button");
+        doneButton.classList.add("done-btn");
+        doneButton.addEventListener("click", () => toggleStatusTask(task.id));
         const deleteButton = document.createElement("button");
         deleteButton.classList.add("delete-btn");
         deleteButton.addEventListener("click", () => deleteTask(task.id));
 
+
         taskContainer.appendChild(title);
         taskContainer.appendChild(editButton);
+        taskContainer.appendChild(doneButton);
         taskContainer.appendChild(deleteButton);
 
         tasksList.appendChild(taskContainer);
@@ -376,6 +387,32 @@ async function saveTask(task) {
 function editTask(taskId) {
     localStorage.setItem("editTaskId", taskId);
     window.location.href = `${BASE_URL}/one-task`;
+}
+
+async function toggleStatusTask(taskId) {
+    const token = getToken();
+
+    try {
+        const response = await fetch(`${AUTH_API_URL}/tasks/${taskId}`, {
+            method: "PATCH",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }            
+        });
+
+        if (response.status === 401){
+            window.location.href = `login`
+            return
+        } else if (response.status === 403){
+            console.error("Error 403")
+            return
+        }
+
+        getUserTasks();
+    } catch (error){
+        console.log(error)
+    }
 }
 
 async function loadTaskData() {
